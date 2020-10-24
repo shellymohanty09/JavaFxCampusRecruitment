@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<tables>
+    <table-entry name="COMPANY" col-data="id varchar(200) primary key,title varchar(200),campus varchar(200),headquarter varchar(100),isAvail boolean default true"/>
+    <table-entry name="MEMBER" col-data="id varchar(200) primary key,name varchar(200), mobile varchar(20),email varchar(100)"/>
+    <table-entry name="VISIT" col-data="companyID varchar(200) primary key,memberID varchar(200),visitTime timestamp default CURRENT_TIMESTAMP,renew_count integer default 0,FOREIGN KEY (companyID) REFERENCES COMPANY(id),FOREIGN KEY (memberID) REFERENCES MEMBER(id)"/>
+</tables>
